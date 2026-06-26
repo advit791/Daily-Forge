@@ -1,0 +1,9 @@
+{
+  "name": "dailyforge",
+  "version": "1.0.0",
+  "description": "Forge yourself, one challenge at a time",
+  "scripts": {
+    "start": "npx serve frontend"
+  },
+  "license": "MIT"
+}
