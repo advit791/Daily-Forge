@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - DailyForge</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg">
+  <div class="noise-overlay"></div>
+  <div class="glow glow-1"></div>
+  <div class="glow glow-2"></div>
+
+  <div class="container">
+    <header class="nav">
+      <a href="index.html" class="logo">
+        <i class="fas fa-fire"></i>
+        <span>DailyForge</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">
+          <i class="fas fa-home"></i>
+          Home
+        </a>
+        <a href="dashboard.html" class="nav-link active">
+          <i class="fas fa-bolt"></i>
+          Dashboard
+        </a>
+      </div>
+    </header>
+
+    <main class="dashboard">
+      <div class="dashboard-header">
+        <div class="welcome-section">
+          <h1>Welcome back, Forger!</h1>
+          <p id="dateDisplay">Loading...</p>
+        </div>
+        <div class="quick-stats">
+          <div class="stat-card glass-card">
+            <div class="stat-icon streak">
+              <i class="fas fa-fire"></i>
+            </div>
+            <div class="stat-info">
+              <span class="stat-value" id="currentStreak">0</span>
+              <span class="stat-label">Day Streak</span>
+            </div>
+          </div>
+          <div class="stat-card glass-card">
+            <div class="stat-icon xp">
+              <i class="fas fa-star"></i>
+            </div>
+            <div class="stat-info">
+              <span class="stat-value" id="totalXp">0</span>
+              <span class="stat-label">Total XP</span>
+            </div>
+          </div>
+          <div class="stat-card glass-card">
+            <div class="stat-icon level">
+              <i class="fas fa-level-up-alt"></i>
+            </div>
+            <div class="stat-info">
+              <span class="stat-value" id="userLevel">1</span>
+              <span class="stat-label">Level</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dashboard-content">
+        <div class="main-content">
+          <section class="today-challenge">
+            <h2><i class="fas fa-bolt"></i> Today's Challenge</h2>
+            <div id="challengeContainer" class="challenge-container">
+              <div class="loading-spinner">
+                <div class="spinner"></div>
+                <p>Loading challenge...</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="recent-activity">
+            <h2><i class="fas fa-history"></i> Recent Activity</h2>
+            <div id="activityList" class="activity-list">
+              <div class="empty-state">
+                <i class="fas fa-inbox"></i>
+                <p>No activity yet. Complete your first challenge!</p>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="sidebar">
+          <div class="xp-progress glass-card">
+            <h3>Level Progress</h3>
+            <div class="progress-ring-container">
+              <svg class="progress-ring" viewBox="0 0 120 120">
+                <circle class="progress-ring-bg" cx="60" cy="60" r="54"/>
+                <circle class="progress-ring-fill" cx="60" cy="60" r="54" id="progressRing"/>
+              </svg>
+              <div class="progress-text">
+                <span class="progress-value" id="xpProgress">0%</span>
+                <span class="progress-label">to Level <span id="nextLevel">2</span></span>
+              </div>
+            </div>
+            <div class="xp-bar-container">
+              <div class="xp-bar" id="xpBar" style="width: 0%"></div>
+            </div>
+            <p class="xp-text"><span id="currentXp">0</span> / <span id="xpNeeded">100</span> XP</p>
+          </div>
+
+          <div class="streak-calendar glass-card">
+            <h3>This Week</h3>
+            <div class="week-grid" id="weekGrid"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+</body>
+</html>
